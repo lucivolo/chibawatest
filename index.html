@@ -464,10 +464,16 @@ footer svg {
   vertical-align: -.12em;
 }
 
+
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
-  50% { transform: translateY(-10px) rotate(calc(var(--r, 0deg) + 5deg)); }
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
 }
+
 
 @keyframes twinkle {
   0%, 100% { opacity: .48; filter: drop-shadow(0 0 2px #fff); }
