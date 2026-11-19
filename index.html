@@ -480,14 +480,23 @@ footer svg{width:1.1em;height:1.1em;color:#f3a9ca;fill:currentColor;vertical-ali
       guestList.append(hint);
     }
   }
-  async function loadGuestbook() {
-    try {
-      const response = await fetch(`${API}/guestbook`, { headers: { 'Accept': 'application/json' } });
-      if (!response.ok) throw new Error('Guestbook API unavailable');
-      const data = await response.json();
-      renderNotes(Array.isArray(data.notes) ? data.notes : []);
-    } catch { renderNotes(readLocalNotes(), true); }
+  
+async function loadGuestbook() {
+  try {
+    const response = await fetch(`${API}/guestbook`, {
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (!response.ok) throw new Error('Guestbook API unavailable');
+
+    const data = await response.json();
+    renderNotes(Array.isArray(data.messages) ? data.messages : []);
+  } catch (error) {
+    console.error('Guestbook loading failed:', error);
+    renderNotes(readLocalNotes(), true);
   }
+}
+
   $('guestbook-form').addEventListener('submit', async event => {
     event.preventDefault();
     const name = $('guest-name').value.trim().slice(0, 32);
