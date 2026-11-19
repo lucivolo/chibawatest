@@ -1,4 +1,4 @@
-
+// Chibawa guestbook API
 export async function onRequestGet({ request, env }) {
   const url = new URL(request.url);
   const limit = Math.min(
