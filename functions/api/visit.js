@@ -1,4 +1,4 @@
-
+// Chibawa visitor counter API
 export async function onRequestPost({ request, env }) {
   const origin = request.headers.get("Origin");
   const host = new URL(request.url).host;
