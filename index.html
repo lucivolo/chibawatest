@@ -540,6 +540,17 @@ async function loadGuestbook() {
     window.setInterval(() => makeHeart(), 1400);
   }
 })();
+
+<div class="social-links">
+  <a
+    href="https://x.com/chibawaofficial"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visit Chibawa on X"
+  >
+    𝕏 Follow Chibawa on X
+  </a>
+</div>
 </script>
 
 <section id="business-inquiries">
@@ -557,18 +568,28 @@ async function loadGuestbook() {
   <p>
     chibawaofficial@gmail.com
   </p>
-  
-<div class="social-links">
-  <a
-    href="https://x.com/chibawaofficial"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Visit Chibawa on X"
-  >
-    𝕏 Follow us on X
-  </a>
-</div>
 </section>
+
+.social-links {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.social-links a {
+  display: inline-block;
+  color: #b477a5;
+  text-decoration: none;
+  background: #fff0f7;
+  border: 1px solid #f3c8df;
+  border-radius: 20px;
+  padding: 10px 18px;
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #f8d9eb;
+  transform: translateY(-2px);
+}
 
 </body>
 </html>
