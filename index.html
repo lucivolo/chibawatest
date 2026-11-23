@@ -531,8 +531,7 @@ async function loadGuestbook() {
     heart.style.left = `${x}%`; heart.style.fontSize = `${12 + Math.random() * 18}px`;
     heart.style.setProperty('--dur', `${4 + Math.random() * 3}s`);
     heart.style.setProperty('--drift', `${-35 + Math.random() * 70}px`);
-    heart.style.setProperty('--heart-color', ['#f4a9cb','#b9b0e8','#a9d9f5','#d3b9f1'][Math.floor(Math.random()*4)]);
-    heartLayer.append(heart); heart.addEventListener('animationend', () => heart.remove());
+    heart.style.setProperty('--heart-color', ['#f4a9cb','#b9b0e8','#a9d9f5','#d3b9f1'][Math.floor(Math.random()*4)]).append(heart); heart.addEventListener('animationend', () => heart.remove());
   }
   if (!reduceMotion) {
     let lastHeart = 0;
@@ -551,6 +550,7 @@ async function loadGuestbook() {
     𝕏 Follow Chibawa on X
   </a>
 </div>
+
 </script>
 
 <section id="business-inquiries">
